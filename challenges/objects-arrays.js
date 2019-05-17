@@ -38,7 +38,7 @@ const dino2 = { //This is an object literal
 
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
 
-const dino3 = {
+const dino3 = { //This is an object literal
   name: `velociraptor`,
   diet: `15kg`,
   weight: `1.8m`,
