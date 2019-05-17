@@ -46,7 +46,7 @@ const cuboid = new CuboidMaker({
   height: 5,
 });
 
-
+// Needed cuboid visuals : http://www.shodor.org/interactivate/activities/SurfaceAreaAndVolume/
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
  console.log(cuboid.volume()); // 100
