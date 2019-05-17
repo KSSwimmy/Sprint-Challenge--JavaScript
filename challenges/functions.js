@@ -8,7 +8,7 @@
 */
 
 function consume(x, y, callback) {
-  return callback(x, y)
+  return callback(x, y);
 }
 
 /* Step 2: Create several functions to callback with consume();
@@ -43,12 +43,13 @@ function greeting(x, y, greeting) {
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: The string gets passed down thoughout the nested functon because 
+//myFunction is where it was initially defind. This is a Lexical Scope. 
 
 
 const external = "I'm outside the function";
 
-function myFunction() {
+function myFunction() { // this function is called a function decloration 
   console.log(external);
   const internal = "Hello! I'm inside myFunction!";
 
