@@ -6,30 +6,65 @@
   object name, diet, weight, length, period
 */
 
+//Kim's Notes: 
+//I wish there were directions of where we should put our anwsers. 
+//The way some of these assignments are presented throws me off sometimes. I don't know where to start. 
+
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
 
+const dino1 = { //Made an Object Method
+  name: `Tyrannosaurs`,
+  diet: `carnivorous`,
+  weight: `7000kg`,         
+  length: `12m`,
+  period: `Late Cretaceous`,
+  onomatopoeia: function(noise) {
+  console.log(`${this.name} wants to ${noise} and eat Fred and Willma as a snack!`) 
+  }
+} 
+
+dino1.onomatopoeia("RAWERSRARARWERSARARARRRR") // <-- INVOKED MY METHOD
+
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
 
+const dino2 = { //This is an object literal
+  name: `stegosaurus`,
+  diet: `carnivorous`,
+  weight: `2000kg`,
+  length: `9m`,
+  period: `Late Jurassic`
+}
+
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+
+const dino3 = {
+  name: `velociraptor`,
+  diet: `15kg`,
+  weight: `1.8m`,
+  length: `9m`,
+  period: `Late Jurassic`
+} 
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(dino1.weight);
+// dot notation gets the object name on the left and the key on the right to console.log the key's value. 
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(dino3.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(dino2.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(dino1.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+// Kim's NOTES: Answer is on the Object Method 
+
 
 
 // ==== Arrays ====
