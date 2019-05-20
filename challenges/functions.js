@@ -7,6 +7,9 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
+function consume(x, y, callback) {
+  return callback(x, y);
+}
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
@@ -14,6 +17,21 @@
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
+function add(x, y, add) {
+  sum = x + y
+  console.log(sum);
+  return sum
+}
+
+function multiply(x, y, multiply) {
+  sum = x * y
+  console.log(sum);
+  return sum
+}
+
+function greeting(x, y, greeting) {
+  return `Hello ${x} ${y}, nice to meet you!`
+}
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 // consume(2,2,add); // 4
@@ -25,12 +43,13 @@
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
+// Explanation: The string gets passed down thoughout the nested functon because 
+//myFunction is where it was initially defind. This is a Lexical Scope. 
 
 
 const external = "I'm outside the function";
 
-function myFunction() {
+function myFunction() { // this function is called a function decloration 
   console.log(external);
   const internal = "Hello! I'm inside myFunction!";
 

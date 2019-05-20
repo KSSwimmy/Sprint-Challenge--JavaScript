@@ -6,29 +6,65 @@
   object name, diet, weight, length, period
 */
 
+//Kim's Notes: 
+//I wish there were directions of where we should put our anwsers. 
+//The way some of these assignments are presented throws me off sometimes. I don't know where to start. 
+
+
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+
+const dino1 = { //Made an Object Method
+  name: `Tyrannosaurs`,
+  diet: `carnivorous`,
+  weight: `7000kg`,         
+  length: `12m`,
+  period: `Late Cretaceous`,
+  onomatopoeia: function(noise) {
+  console.log(`${this.name} wants to ${noise} and eat Fred and Willma as a snack!`) 
+  }
+} 
+
+dino1.onomatopoeia("RAWERSRARARWERSARARARRRR") // <-- INVOKED MY METHOD
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
 
+const dino2 = { //This is an object literal
+  name: `stegosaurus`,
+  diet: `carnivorous`,
+  weight: `2000kg`,
+  length: `9m`,
+  period: `Late Jurassic`
+}
+
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+
+const dino3 = { //This is an object literal
+  name: `velociraptor`,
+  diet: `15kg`,
+  weight: `1.8m`,
+  length: `9m`,
+  period: `Late Jurassic`
+} 
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(dino1.weight);
+// dot notation gets the object name on the left and the key on the right to console.log the key's value. 
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(dino3.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(dino2.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(dino1.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+// Kim's NOTES: Answer is on the Object Method 
+
 
 
 // ==== Arrays ====
@@ -49,8 +85,15 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities)
+const universities = []; // this empty array is for the new returned array
+for (let i = 0; i < graduates.length; i++) 
+//the for loop gets or sets the length of the array. In this case we are getting the legnth so that it can me sorted. 
+ {
+    universities.push(graduates[i].university) 
+    // universities.push (push is a ) is adding new elements to the end of the array and gives the new length. 
+    universities.sort(); // <-- this sorts all the universities alphabetically
+  }
+  console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -59,13 +102,26 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
-console.log(contactInfo);
+graduates.forEach(EachStudent => {
+    contactInfo.push(`${EachStudent.first_name} ${EachStudent.email}`)
+})
+    console.log(contactInfo); 
 
+    //Kim's notes:
+    //Struggled with this one becasue Quokka wouldn't tell me what I was missing!
+    //No error or nothing! I put what was missing then it started acting crazy. 
+    //So I took my code to repl.it!! I was missing '})' pasted it back in here and then it decided it wanted to work. What?
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+//const uni = [];
+
+let uni = graduates.filter(allUnies => {
+  let  = allUnies.university === "Uni"
+  return allUnies
+});
 console.log(uni);
 
+//This one is giving me problems! 
 
 // ==== ADVANCED Array Methods ====
 
@@ -89,6 +145,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+zooAnimals.forEach(zooAnimals => animalNames.push(` Name: ${zooAnimals.animal_name}, Scientific: ${zooAnimals.scientific_name}`));
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -97,7 +154,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
+//const lowerCase = []; // Tried to get me! I had to change the variable to "let" which will allow change. 
+let lowerCase = [];
+lowerCase = zooAnimals.map(animal => animal.animal_name.toLowerCase())
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -105,7 +164,9 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+//const largerPopulation = []; 
+let largerPopulation = [];
+largerPopulation = zooAnimals.filter(animal => animal.population < 5)
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -113,7 +174,9 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+//const populationTotal = 0; // <-- why keep these in here!?
+let populationTotal = 0; // We're starting from zero because it is our accumulator. 
+populationTotal = zooAnimals.reduce((total, zooAnimals) => total + zooAnimals.population, 0)
 console.log(populationTotal);
 
 
